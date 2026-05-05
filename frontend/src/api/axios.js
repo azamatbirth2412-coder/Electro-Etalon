@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:8000/api",
+  baseURL: "https://electro-etalon.onrender.com/api",
 });
 
 API.interceptors.request.use((config) => {
@@ -19,11 +19,11 @@ export const fileUrl = (url) => {
 
   // если приходит /api/...
   if (url.startsWith("/api/")) {
-    return `http://localhost:8000${url}`;
+    return `https://electro-etalon.onrender.com${url}`;
   }
 
   // обычный файл
-  return `http://localhost:8000/api/files/${url}`;
+  return `https://electro-etalon.onrender.com/api/files/${url}`;
 };
 
 export default API;
